@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/Home/HomePage'
-import ProductsPage from '../pages/Products/ProductsPage'
+import { HomePage, ProductsPage } from '../pages'
 
 function AllRoutes() {
     return (<>
