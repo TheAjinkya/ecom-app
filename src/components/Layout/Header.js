@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom"
 import Logo from "../../assets/logo.png"
+import { useEffect, useState } from "react";
+import { Search } from "../Sections/Search"
 
 export function Header() {
+
+  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
+
+  const [showSearch, setShowSearch] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode))
+    if (darkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }, [darkMode])
+
   return (
     <header>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -11,8 +27,8 @@ export function Header() {
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CodeBook</span>
           </Link>
           <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <span className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-gear"></span>
-            <span className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-search"></span>
+            <span onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-gear"></span>
+            <span onClick={()=>setShowSearch(!showSearch)} className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-search"></span>
             <Link to="/cart" className="text-gray-700 dark:text-white mr-5">
               <span className="text-2xl bi bi-cart-fill relative">
                 <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">2</span>
@@ -22,6 +38,7 @@ export function Header() {
           </div>
         </div>
       </nav>
+      {showSearch && <Search />}
     </header>
   )
 }
