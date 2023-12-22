@@ -2,12 +2,15 @@ import { useEffect, useState } from "react"
 import FilterBar from "./components/FilterBar";
 import { ProductCard, UseTitle } from "../../components";
 import { useLocation } from "react-router-dom";
+import { useFilter } from "../../context";
 
 export function ProductList() {
+  const {productList} = useFilter();
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
   const search = useLocation().search;
   console.log("search", search)
+  console.log("productList", productList)
 
   const searchTerm = new URLSearchParams(search).get("q");
 

@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useContext } from "react"
 
 const filterInitialState = {
     productList: [],
@@ -8,7 +8,7 @@ const filterInitialState = {
     ratings: null
 }
 
-export const FilterContext = createContext(filterInitialState)
+const FilterContext = createContext(filterInitialState)
 
 export const FilterProvider = ({ children }) => {
     const value = {
@@ -17,4 +17,9 @@ export const FilterProvider = ({ children }) => {
     return (<FilterContext.Provider value={value}>
         {children}
     </FilterContext.Provider>)
+}
+
+export const useFilter = () => {
+    const context = useContext(FilterContext)
+    return context;
 }
