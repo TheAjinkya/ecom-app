@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react"
 
 const filterInitialState = {
-    productList: [],
+    productList: [10, 20],
     onlyInStock: false,
     bestSellerOnly: false,
     sortBy: null,
