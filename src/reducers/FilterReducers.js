@@ -1,11 +1,10 @@
-const FilterReducer = (state, action) => {
+export const FilterReducer = (state, action) => {
 
     const { type, payload } = action
 
     switch (type) {
         case "PRODUCT_LIST":
-
-            return
+            return { productList: payload.products }
         case "SORT_BY":
 
             return

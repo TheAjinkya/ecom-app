@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useFilter } from "../../context";
 
 export function ProductList() {
-  const {productList} = useFilter();
+  const {productList, initialProductList} = useFilter();
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
   const search = useLocation().search;
@@ -22,6 +22,7 @@ export function ProductList() {
       const result = await response.json();
       console.log("result", result);
       setProducts(result)
+      initialProductList(result)
     }
     getProducts();
   }, [searchTerm])

@@ -1,4 +1,5 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useReducer } from "react"
+import { FilterReducer } from "../reducers/FilterReducers"
 
 const filterInitialState = {
     productList: [10, 20],
@@ -11,8 +12,18 @@ const filterInitialState = {
 const FilterContext = createContext(filterInitialState)
 
 export const FilterProvider = ({ children }) => {
+
+    const [state, dispatch] = useReducer(FilterReducer, filterInitialState);
+
+    function initialProductList(products) {
+        dispatch({ type: "PRODUCT_LIST", payload: { products: products } })
+    }
+
+    const productList = state.productList
+
     const value = {
-        productList: [1, 2, 3]
+        productList,
+        initialProductList
     }
     return (<FilterContext.Provider value={value}>
         {children}
