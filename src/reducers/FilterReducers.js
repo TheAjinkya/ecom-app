@@ -6,20 +6,23 @@ export const FilterReducer = (state, action) => {
         case "PRODUCT_LIST":
             return { productList: payload.products }
         case "SORT_BY":
-
-            return
+            return { ...state, sortBy: payload.sortBy }
         case "RATINGS":
-
-            return
+            return { ...state, ratings: payload.ratings }
         case "BEST_SELLER":
-            return {...state, bestSellerOnly: payload.bestSellerOnly}
+            return { ...state, bestSellerOnly: payload.bestSellerOnly }
         case "ONLY":
 
             return
         case "ONLY_IN_STOCK":
-            return {...state, onlyInStock: payload.onlyInStock}
+            return { ...state, onlyInStock: payload.onlyInStock }
         case "CLEAR":
-
+            return {
+                ...state, onlyInStock: false,
+                bestSellerOnly: false,
+                sortBy: null,
+                ratings: null
+            }
             return
 
         default:

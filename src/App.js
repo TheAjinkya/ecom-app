@@ -7,7 +7,7 @@ import { Header, Footer, ScrollToTop, UseTitle } from './components';
 import { FilterProvider } from './context';
 
 function App() {
-  UseTitle("Wlcome to CodeBook")
+  UseTitle("Welcome to CodeBook")
 
   return (<div className='dark:bg-dark'>
     <FilterProvider>

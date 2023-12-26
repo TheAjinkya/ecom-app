@@ -25,10 +25,6 @@ export function ProductList() {
     getProducts();
   }, [searchTerm])
 
-  useEffect(() => {
-    console.log("Initial products", products)
-  }, [products])
-
   return (
     <main>
       <section className="my-5">
