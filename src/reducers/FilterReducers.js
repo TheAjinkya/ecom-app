@@ -11,15 +11,13 @@ export const FilterReducer = (state, action) => {
         case "RATINGS":
 
             return
-        case "BEST_SELLER_ONLY":
-
-            return
+        case "BEST_SELLER":
+            return {...state, bestSellerOnly: payload.bestSellerOnly}
         case "ONLY":
 
             return
         case "ONLY_IN_STOCK":
-
-            return
+            return {...state, onlyInStock: payload.onlyInStock}
         case "CLEAR":
 
             return
