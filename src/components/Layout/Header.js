@@ -2,12 +2,13 @@ import { Link } from "react-router-dom"
 import Logo from "../../assets/logo.png"
 import { useEffect, useState } from "react";
 import { Search } from "../Sections/Search"
+import { DropdownLoggedIn } from "../Elements";
 
 export function Header() {
 
   const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem("darkMode")) || false);
-
   const [showSearch, setShowSearch] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode))
@@ -34,7 +35,8 @@ export function Header() {
                 <span className="text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full ">2</span>
               </span>
             </Link>
-            <span className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-person-circle"></span>
+            <span onClick={()=> setShowDropdown(!showDropdown)} className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-person-circle"></span>
+            {showDropdown && <DropdownLoggedIn />}
           </div>
         </div>
       </nav>

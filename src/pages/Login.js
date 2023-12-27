@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+export function Login() {
 
   const navigate = useNavigate();
   const email = useRef();
@@ -26,4 +26,3 @@ function Login() {
   </main>)
 }
 
-export default Login

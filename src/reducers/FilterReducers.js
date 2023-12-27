@@ -23,8 +23,6 @@ export const FilterReducer = (state, action) => {
                 sortBy: null,
                 ratings: null
             }
-            return
-
         default:
             return
     }
