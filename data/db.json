@@ -289,6 +289,12 @@
       "password": "$2a$10$nqdtEnBQbjbskDbiY4dMTeWLHvWz9jVw7YChmJYerSUBlgKUnvmgS",
       "name": "ARC",
       "id": 2
+    },
+    {
+      "email": "ajinkyachanshetty@gmail.com",
+      "password": "$2a$10$sr8fE7GHrtNCP.Z7N5OrsOOni.wYZhpt743APJUdxsovklJ8LLFZO",
+      "name": "Ajinkya Chanshetty",
+      "id": 3
     }
   ]
 }
