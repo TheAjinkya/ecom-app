@@ -295,6 +295,18 @@
       "password": "$2a$10$sr8fE7GHrtNCP.Z7N5OrsOOni.wYZhpt743APJUdxsovklJ8LLFZO",
       "name": "Ajinkya Chanshetty",
       "id": 3
+    },
+    {
+      "email": "demo@gm.com",
+      "password": "$2a$10$P5HuRqKWefYS/ABu3hZeiOuI1I0iU/NSNaqjQjsDfy7uZYnuukXEa",
+      "name": "demo",
+      "id": 4
+    },
+    {
+      "email": "guest@gm.com",
+      "password": "$2a$10$h0ttD4h4KKwCfD.zlf7Ng.Qw7gwGQLoZWfsFA2WjNlWPCsLg.yjTS",
+      "name": "guest",
+      "id": 5
     }
   ]
 }

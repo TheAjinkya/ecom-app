@@ -1,8 +1,12 @@
-import React from 'react'
+import { CartEmpty } from "./components/CartEmpty"
+import { CartList } from "./components/CartList"
 
 function CartPage() {
+  const cartLength = 0
   return (
-    <div>CartPage</div>
+    <div>
+      {cartLength!==0 ? <CartEmpty/> : <CartList/>}
+    </div>
   )
 }
 

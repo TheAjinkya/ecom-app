@@ -36,7 +36,7 @@ export function Header() {
               </span>
             </Link>
             <span onClick={()=> setShowDropdown(!showDropdown)} className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-person-circle"></span>
-            {showDropdown && <DropdownLoggedIn />}
+            {showDropdown && <DropdownLoggedIn setShowDropdown={setShowDropdown}/>}
           </div>
         </div>
       </nav>
