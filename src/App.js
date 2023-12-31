@@ -7,17 +7,20 @@ import { Header, Footer, ScrollToTop, UseTitle } from './components';
 import { FilterProvider } from './context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   UseTitle("Welcome to CodeBook")
 
   return (<div className='dark:bg-dark'>
     <FilterProvider>
-    <Header />
-    <ScrollToTop/>
-    <ToastContainer/>
-    <AllRoutes />
-    <Footer />
+      <CartProvider>
+        <Header />
+        <ScrollToTop />
+        <ToastContainer />
+        <AllRoutes />
+        <Footer />
+      </CartProvider>
     </FilterProvider>
   </div>
   );
