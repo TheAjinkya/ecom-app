@@ -5,8 +5,7 @@ import { useCart } from "../../../context/CartContext";
 
 export function CartList() {
   const [checkout, setCheckout] = useState(false);
-  const { cartList, total } = useCart();
-
+  const { cartList, addToCart, removeFromCart, clearCart, total } = useCart()
 
   return (
     <>
@@ -18,7 +17,7 @@ export function CartList() {
 
       <section>
         {cartList.map((product) => (
-          <CartCard key={product.id} product={product} />
+          <CartCard key={product.id} removeFromCart={removeFromCart} product={product} />
         ))}
       </section>
 

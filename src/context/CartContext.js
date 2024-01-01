@@ -8,12 +8,11 @@ const cartInitialValue = {
 
 const CartContext = createContext(cartInitialValue)
 
-
 export const CartProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(CartReducers, cartInitialValue)
 
-    function addToCart(product){
+    function addToCart(product) {
         console.log("AddToCart", product)
         const updatedList = state.cartList.concat(product)
         const updatedTotal = state.total + product.price
@@ -37,7 +36,7 @@ export const CartProvider = ({ children }) => {
         })
     }
 
-    const clearCart = ()=>{
+    const clearCart = () => {
         const updatedList = []
         const updatedTotal = 0;
         dispatch({
@@ -51,11 +50,11 @@ export const CartProvider = ({ children }) => {
     const value = {
         cartList: state.cartList,
         addToCart,
-        removeFromCart, 
+        removeFromCart,
         clearCart,
         total: state.total
     }
-    return (<div value={value}>{children}</div>)
+    return (<CartContext.Provider value={value}>{children}</CartContext.Provider>)
 }
 
 export const useCart = () => {

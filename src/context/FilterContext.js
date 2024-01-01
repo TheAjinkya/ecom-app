@@ -55,9 +55,6 @@ export const FilterProvider = ({ children }) => {
 
     const filteredProducts = rating(sort(inStock(bestSeller(state.productList))));
 
-    useEffect(() => {
-        console.log("filteredProducts", filteredProducts)
-    }, [filteredProducts])
 
     const value = {
         state,

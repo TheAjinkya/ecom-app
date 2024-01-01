@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 
 export function ProductCard({ product }) {
   const { id, best_seller, poster, name, overview, price, rating } = product
-  const { cartList, addToCart, removeFromCart } = useCart();
+  const { cartList, addToCart, removeFromCart, total } = useCart();
   const [inCart, setInCart] = useState(false);
 
   useEffect(() => {
       const productInCart = cartList.find(item => item.id === product.id);
-      console.log("productInCart", productInCart)
 
       if(productInCart){
           setInCart(true);
