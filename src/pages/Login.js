@@ -24,7 +24,9 @@ export function Login() {
       const data = await response.json();
       console.log('data', data)
       if (data.accessToken) {
-        toast.success("Logged In Successfully!")
+        sessionStorage.setItem("token", JSON.stringify(data.accessToken))
+        sessionStorage.setItem("cbid", JSON.stringify(data.user.id))
+        toast.success("Logged In Successfully!", {closeButton: true, position: "bottom-center"})
         navigate("/products")
       }
     }
