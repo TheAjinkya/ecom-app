@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/amazon.svg"
 import { useEffect, useState } from "react";
 import { Search } from "../Sections/Search"
 import { DropdownLoggedIn } from "../Elements";
@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
           <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src={Logo} className="h-8" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CodeBook</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kindle Store</span>
           </Link>
           <div className="flex items-center space-x-6 rtl:space-x-reverse">
             <span onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl text-gray-700 dark:text-white bi bi-gear"></span>

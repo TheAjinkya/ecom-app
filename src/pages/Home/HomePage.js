@@ -5,7 +5,7 @@ import { Hero } from "./components/Hero";
 import { Testimonials } from "./components/Testimonials";
 
 export function HomePage() {
-  UseTitle("Welcome to CodeBook")
+  UseTitle("Welcome to Kindle Store")
   return (
     <div>
       <Hero/>

@@ -13,7 +13,7 @@ export function ProductList() {
   const searchTerm = new URLSearchParams(search).get("q");
 
   // console.log("searchTerm", searchTerm)
-  UseTitle("Explore E-Books - CodeBook")
+  UseTitle("Explore E-Books - Kindle Store")
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetch(`http://localhost:8080/products?name_like=${searchTerm ? searchTerm : ""}`);

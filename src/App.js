@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/kindle-logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage'
@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  UseTitle("Welcome to CodeBook")
+  UseTitle("Welcome to Kindle Store")
 
   return (<div className='dark:bg-dark'>
     <FilterProvider>
